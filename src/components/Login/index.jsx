@@ -1,5 +1,5 @@
-import componentsGroup from "./componentsGroup.svg";
-import logoDark from "./logo-dark-mode.svg";
+import componentsGroup from "../../images/componentsGroup.svg";
+import logoDark from "../../images/ovtm-bank-logo-light.svg";
 import "./style.css";
 import { FaSignInAlt } from "react-icons/fa";
 

@@ -9,7 +9,9 @@ function TotalMoney({ transactionsList }) {
       <div className="total__container fadeInUp">
         <div>
           <h3>Valor total:</h3>
-          <span id="valorTotal">$ {valorTotal}</span>
+          <span id="valorTotal">
+            $ {valorTotal.toFixed(2).replace(".", ",")}
+          </span>
         </div>
         <span className="helpText">O valor se refere ao saldo.</span>
       </div>
