@@ -1,4 +1,4 @@
-import logo from "./ovtm-bank-logo.svg";
+import logo from "../../images/ovtm-bank-logo.svg";
 import "./style.css";
 import { FaHome } from "react-icons/fa";
 

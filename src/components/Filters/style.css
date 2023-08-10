@@ -15,7 +15,13 @@
   }
 }
 
-.filters__container>nav {
+.filters__container > nav {
   display: flex;
   gap: 1rem;
+}
+
+@media (max-width: 375px) {
+  .filters__container > nav .button--text {
+    display: none;
+  }
 }

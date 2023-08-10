@@ -1,5 +1,5 @@
 import "./style.css";
-import { FaWallet, FaPlus, FaMinus } from "react-icons/fa";
+import { FaInfinity, FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 function Filters({ handleSearch, clearSearch, buttonFilter }) {
   return (
@@ -12,8 +12,8 @@ function Filters({ handleSearch, clearSearch, buttonFilter }) {
           onClick={() => clearSearch()}
           disabled={buttonFilter === "todos" ? true : false}
         >
-          <FaWallet />
-          Todos
+          <FaInfinity />
+          <span className="button--text">Todos</span>
         </button>
         <button
           id="filterEntradas"
@@ -21,8 +21,8 @@ function Filters({ handleSearch, clearSearch, buttonFilter }) {
           onClick={() => handleSearch("entrada")}
           disabled={buttonFilter === "entrada" ? true : false}
         >
-          <FaPlus />
-          Entradas
+          <FaArrowDown />
+          <span className="button--text">Entradas</span>
         </button>
         <button
           id="filterDespesas"
@@ -30,8 +30,8 @@ function Filters({ handleSearch, clearSearch, buttonFilter }) {
           onClick={() => handleSearch("despesa")}
           disabled={buttonFilter === "despesa" ? true : false}
         >
-          <FaMinus />
-          Despesas
+          <FaArrowUp />
+          <span className="button--text">Despesas</span>
         </button>
       </nav>
     </div>
