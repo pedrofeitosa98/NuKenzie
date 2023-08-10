@@ -7,7 +7,7 @@ function Card({ transaction, removeTransaction }) {
       <div className="cardEntrada fadeInLeft">
         <div>
           <h3>{transaction.description}</h3>
-          <p>R$ {transaction.value}</p>
+          <p>R$ {transaction.value.toFixed(2).replace(".", ",")}</p>
           <button
             className="button--remove"
             onClick={() => removeTransaction(transaction)}
@@ -24,7 +24,7 @@ function Card({ transaction, removeTransaction }) {
       <div className="cardSaida fadeInLeft">
         <div>
           <h3>{transaction.description}</h3>
-          <p>R$ {transaction.value}</p>
+          <p>R$ {transaction.value.toFixed(2).replace(".", ",")}</p>
           <button
             className="button--remove"
             onClick={() => removeTransaction(transaction)}

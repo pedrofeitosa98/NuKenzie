@@ -1,10 +1,11 @@
 :root {
-  --color-primary: #FD377E;
-  --color-primary-2: #E34981;
-  --color-secondary: #03B898;
-  --grey-1: #F8F9FA;
-  --grey-2: #E9ECEF;
-  --grey-3: #868E96;
+  --color-primary: #9337fd;
+  --color-primary-2: #7b40be;
+  --color-secondary: #03b898;
+  --color-secondary-2: #ca212f;
+  --grey-1: #f8f9fa;
+  --grey-2: #e9ecef;
+  --grey-3: #868e96;
   --grey-4: #212529;
   --box-shadows: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
@@ -40,7 +41,7 @@ body,
 input,
 button,
 textarea {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 h1,
@@ -90,7 +91,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 input,

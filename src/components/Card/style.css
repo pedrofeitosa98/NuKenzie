@@ -13,7 +13,6 @@
 }
 
 @media (max-width: 35rem) {
-
   .cardEntrada,
   .cardSaida {
     width: 100%;
@@ -29,8 +28,8 @@
   transform: scale(103%);
 }
 
-.cardEntrada>div,
-.cardSaida>div {
+.cardEntrada > div,
+.cardSaida > div {
   display: flex;
   justify-content: space-between;
   gap: 2.125rem;
@@ -38,9 +37,8 @@
 }
 
 @media (max-width: 425px) {
-
-  .cardEntrada>div,
-  .cardSaida>div {
+  .cardEntrada > div,
+  .cardSaida > div {
     flex-direction: row;
     flex-wrap: wrap-reverse;
     column-gap: 0;
@@ -57,7 +55,6 @@
 }
 
 @media (max-width: 35rem) {
-
   .cardEntrada h3,
   .cardSaida h3 {
     width: 60%;
@@ -65,7 +62,6 @@
 }
 
 @media (max-width: 425px) {
-
   .cardEntrada h3,
   .cardSaida h3 {
     width: 100%;
@@ -83,5 +79,5 @@
 }
 
 .cardSaida {
-  border-left: 4px solid var(--grey-2);
+  border-left: 4px solid var(--color-secondary-2);
 }

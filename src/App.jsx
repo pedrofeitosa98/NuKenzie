@@ -2,13 +2,13 @@ import "./styles/global.css";
 import "./styles/animations.css";
 import "./App.css";
 import Login from "./components/Login";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import TotalMoney from "./components/TotalMoney";
 import Filters from "./components/Filters";
 import List from "./components/List";
-import PedrinhoFooter from "./components/PedrinhoFooter";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLogin, setLogin] = useState(false);
@@ -22,6 +22,14 @@ function App() {
     value: "",
   });
 
+  useEffect(() => {
+    if (localStorage.getItem("@OVITOM_BANK_TRANSACTIONS")) {
+      setListTransactions(
+        JSON.parse(localStorage.getItem("@OVITOM_BANK_TRANSACTIONS"))
+      );
+    }
+  }, []);
+
   function removeTransaction(transactionTarget) {
     const listRefreshed = listTransactions.filter(
       (transaction) => transaction !== transactionTarget
@@ -31,27 +39,33 @@ function App() {
       const listRefreshedOnFilter = transactionsSearch.filter(
         (transaction) => transaction !== transactionTarget
       );
+
       setTransactionsSearch(listRefreshedOnFilter);
+      localStorage.setItem(
+        "@OVITOM_BANK_TRANSACTIONS",
+        JSON.stringify(listRefreshedOnFilter)
+      );
     }
   }
 
   function handleSubmit(e) {
     e.preventDefault();
+    const numberValue = Number(formData.value);
 
     if (formData.description === "") {
       alert("Adicione uma descrição na transação");
-    } else if (formData.type === "despesa" && formData.value >= 0) {
-      alert("Valor da DESPESA está POSITIVO");
-    } else if (formData.type === "entrada" && formData.value <= 0) {
-      alert("Valor da ENTRADA está NEGATIVO");
     } else {
       const newTransaction = {
         description: formData.description,
         type: formData.type,
-        value: formData.value,
+        value: formData.type === "entrada" ? numberValue : -numberValue,
       };
 
       setListTransactions([...listTransactions, newTransaction]);
+      localStorage.setItem(
+        "@OVITOM_BANK_TRANSACTIONS",
+        JSON.stringify([...listTransactions, newTransaction])
+      );
 
       setFormData({
         description: "",
@@ -106,7 +120,7 @@ function App() {
       ) : (
         <Login setLogin={setLogin} />
       )}
-      <PedrinhoFooter />
+      <Footer />
     </>
   );
 }
